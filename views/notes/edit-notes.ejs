@@ -1,0 +1,22 @@
+<%- include('../includes/head.ejs') %>
+</head>
+<body>
+    <%- include('../includes/navigation.ejs') %>
+    <div class="container mt-5">
+       <form action="/<% if(edit){ %>edit-notes<% } else { %>add-notes<% }%>" method="post" class="form-control">
+        <div class="mb-3">
+            <label for="title" class="form-label">Title</label>
+            <input type="text" name="title"  id="title" value="<% if(edit) { %> <%=note.title%> <% } %>" >
+          </div>
+          <div class="mb-3">
+            <label for="description" class="form-label">Description</label>
+            <textarea  name="description" id="description" rows="3"><% if(edit) { %> <%=note.description%> <% } %></textarea>
+          </div>
+          <% if(edit){ %>
+          <input type="hidden" name="noteId" value="<%= note._id %>">
+          <% } %>
+          <button type="submit" class="btn btn-primary" style="display:block; margin: auto;"><% if(edit) { %> Update <% } else{ %> Add <% } %></button>
+       </form>
+    </div>
+    </body>
+    </html>

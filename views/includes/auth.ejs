@@ -1,0 +1,15 @@
+<%- include('head.ejs') %>
+</head>
+<body>
+    <%- include('navigation.ejs') %>
+    <div class="container">
+        <h1 class="text-center mt-5"><%= heading%></h1>
+         <form action="<%= path%>" method="post">
+            <div class="mb-3 w-50 m-auto">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" name="email" class="form-control" id="email" >
+              </div>
+              <div class="mb-3 w-50 m-auto">
+                <label for="password" class="form-label">Password</label>
+                <input type="password" name="password" class="form-control" id="password" >
+              </div>

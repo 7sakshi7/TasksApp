@@ -1,0 +1,25 @@
+<%- include('../includes/head.ejs') %>
+</head>
+<body>
+    <%- include('../includes/navigation.ejs') %>
+    <div class="container mt-5">
+        <div class="row">
+            <% notes.forEach(note => {  %>
+                <div class="card mx-2" style="width: 18rem;">
+                    <div class="card-body">
+                      <h5 class="card-title"> <%= note.title %></h5>
+                      <p class="card-text"><%= note.description %></p>
+                      <div class="row">
+                        <a href="/edit-notes/<%= note._id %>?edit=true" class="btn btn-primary">Edit</a>
+                        <form action="/delete-note" method="post">
+                            <input type="hidden" name="noteId" value="<%= note._id %>">
+                           <button type="submit" class="btn btn-danger">Delete</button>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                <% }); %>
+        </div>
+    </div>
+    </body>
+    </html>
