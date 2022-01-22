@@ -13,7 +13,7 @@ const notesRoutes = require("./routes/notes");
 
 // url for connecting to mongo db
 const MONGO_DB_URI =
-  "mongodb+srv://sakshi:sakshi@cluster0.v2o4h.mongodb.net/notesapp?&w=majority";
+  "Your url";
 
 //   creating object of express
 const app = express();
